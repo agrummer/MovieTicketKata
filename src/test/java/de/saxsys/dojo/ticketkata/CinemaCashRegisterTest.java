@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
  * @author Marco Dierenfeldt
  */
 public class CinemaCashRegisterTest {
-    
+
     /**
      * Test of startPurchase method, of class CinemaCashRegister.
      */
