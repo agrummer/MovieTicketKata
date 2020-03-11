@@ -6,7 +6,8 @@ package de.saxsys.dojo.ticketkata;
  * @author Marco Dierenfeldt
  * @version 0.1
  *
- * This solution was written by Alex Grummer in 44 minutes
+ * This solution was written by Alex Grummer in under an hour
+ * (44 minutes to get all unit tests passing and 15 minutes of refactoring to use lambdas)
  *
  */
 public class CinemaCashRegister {
