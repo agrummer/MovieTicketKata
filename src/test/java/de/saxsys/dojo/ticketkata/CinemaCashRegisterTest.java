@@ -17,7 +17,7 @@ public class CinemaCashRegisterTest {
         System.out.println("testPurchaseNo3DParquetWeekdayNoGroupMidageNoStudent");
         int runtime = 72;
         Day day = Day.TUE;
-        boolean isParquet = true;
+        boolean isParquet = true; // general seating
         boolean is3D = false;
         int age = 35;
         boolean isStudent = false;
