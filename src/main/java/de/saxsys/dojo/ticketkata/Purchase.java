@@ -35,27 +35,14 @@ public class Purchase {
     }
 
     private float calcTicketPriceAdjustment(boolean isGroup) {
-        float adj = 0.00f;
+        float adjustmentAmount = 0.00f;
 
-        // Premiums
-        if (movie.is3D()) {
-            adj += CashRegisterConfig.THREE_DIMENSIONAL_MOVIE_PREMIUM;
-        }
-        if (movie.isOverLength()) {
-            adj += CashRegisterConfig.OVER_LENGTH_MOVIE_PREMIUM;
-        }
-        if (Day.SAT.equals(day) || Day.SUN.equals(day)) {
-            adj += CashRegisterConfig.WEEKEND_PREMIUM;
-        }
-        if (!isParquet) {
-            adj += CashRegisterConfig.LOGE_SEATING_PREMIUM;
+        for (TicketPriceAdjustment adjustment : CashRegisterConfig.getTicketPriceAdjustments()) {
+            if (adjustment.appliesTo(movie, day, isParquet, isGroup)) {
+                adjustmentAmount += adjustment.getAmount();
+            }
         }
 
-        // Discounts
-        if (!isGroup && CashRegisterConfig.MOVIE_DAY.equals(day)) {
-            adj -= CashRegisterConfig.MOVIE_DAY_DISCOUNT;
-        }
-
-        return adj;
+        return adjustmentAmount;
     }
 }

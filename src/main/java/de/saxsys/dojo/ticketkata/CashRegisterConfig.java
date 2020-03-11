@@ -1,5 +1,8 @@
 package de.saxsys.dojo.ticketkata;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CashRegisterConfig {
 
     // Base Admission Rates
@@ -21,6 +24,16 @@ public class CashRegisterConfig {
 
     // Discounts
     static final Day MOVIE_DAY = Day.THU;
-    static final float MOVIE_DAY_DISCOUNT = 2.00f;
+    static final float MOVIE_DAY_DISCOUNT = -2.00f;
+
+    static List<TicketPriceAdjustment> getTicketPriceAdjustments() {
+        List<TicketPriceAdjustment> a = new ArrayList<>();
+        a.add(new TicketPriceAdjustment(THREE_DIMENSIONAL_MOVIE_PREMIUM, p -> p.getMovie().is3D()));
+        a.add(new TicketPriceAdjustment(OVER_LENGTH_MOVIE_PREMIUM, p -> p.getMovie().isOverLength()));
+        a.add(new TicketPriceAdjustment(WEEKEND_PREMIUM, p -> Day.SAT.equals(p.getDay()) || Day.SUN.equals(p.getDay())));
+        a.add(new TicketPriceAdjustment(LOGE_SEATING_PREMIUM, p -> !p.isParquet()));
+        a.add(new TicketPriceAdjustment(MOVIE_DAY_DISCOUNT, p -> !p.isGroup() && MOVIE_DAY.equals(p.getDay())));
+        return a;
+    }
 
 }
