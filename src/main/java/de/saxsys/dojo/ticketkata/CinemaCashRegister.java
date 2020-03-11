@@ -5,8 +5,13 @@ package de.saxsys.dojo.ticketkata;
  *
  * @author Marco Dierenfeldt
  * @version 0.1
+ *
+ * This solution was written by Alex Grummer in 44 minutes
+ *
  */
 public class CinemaCashRegister {
+
+    private Purchase purchase;
 
     /**
      * (1) New customers arrive at your ticket booth and tell you
@@ -18,7 +23,8 @@ public class CinemaCashRegister {
      * @param is3D      true if the movie's shown in 3D
      */
     public void startPurchase(int runtime, Day day, boolean isParquet, boolean is3D) {
-
+        Movie movie = new Movie(runtime, is3D);
+        purchase = new Purchase(movie, day, isParquet);
     }
 
     /**
@@ -28,7 +34,7 @@ public class CinemaCashRegister {
      * @param isStudent true if the ticket buyer is a student
      */
     public void addTicket(int age, boolean isStudent) {
-
+        purchase.addPerson(new Person(age, isStudent));
     }
 
     /**
@@ -37,7 +43,7 @@ public class CinemaCashRegister {
      * @return total in dollars
      */
     public float finishPurchase() {
-        return 0.0f;
+        return purchase.calcTotalPrice();
     }
 
 }
