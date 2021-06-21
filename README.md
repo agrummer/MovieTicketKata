@@ -10,25 +10,26 @@ the theater ticket pricing menu and get to work building your own cash register.
 popcorn-powered cash register will need to calculate the total purchase price for each 
 customer, and you'll need to work quickly... the line outside is growing!
 
-| Basic admission rates (regular weekday, 2D movie, &lt;=120 min, parquet) |            |
-| ------------------------------------------------------------------------ | ---------: |
-| General admission                                                        |     $11.00 |
-| Students                                                                 |      $8.00 |
-| Senior Citizens (65 & older)                                             |      $6.00 |
-| Children (under 13)                                                      |      $5.50 |
-| Group (20 people or more)                                                | $6.00 each |
-
-| Exceptions*                               |        |
-| ----------------------------------------- | -----: |
-| 3D movie                                  | +$3.00 |
-| Over-length (more than 120 min.)          | +$1.50 |
-| Movie Day (Thursday, except for groups!)  | -$2.00 |
-| Weekends                                  | +$1.50 |
-| Loge                                      | +$2.00 |
-
-_*Exceptions are applied for each ticket purchased._
-
 **Customer satisfaction is important, so always charge the lowest possible price!**
+
+| Basic admission rates (regular weekday, 2D movie, &lt;= 120 min, parquet) |            |
+| ------------------------------------------------------------------------- | ---------: |
+| General admission                                                         |     $11.00 |
+| Students                                                                  |      $8.00 |
+| Senior Citizens (65 & older)                                              |      $6.00 |
+| Children (under 13)                                                       |      $5.50 |
+| Group (20 people or more)                                                 | $6.00 each |
+
+| Surcharges                         | Per Ticket |
+| ---------------------------------- | ---------: |
+| 3D movie                           |     +$3.00 |
+| Over-length (more than 120 min.)   |     +$1.50 |
+| Weekends                           |     +$1.50 |
+| Loge                               |     +$2.00 |
+
+| Discounts                                      | Per Ticket |
+| ---------------------------------------------- | ---------: |
+| Movie Day Thursday (does not apply to groups!) |     -$2.00 |
 
 #### Truths You Can Assume:
 * 3D movies will always have "in 3D" at the end of their title
@@ -44,6 +45,7 @@ will always be for the same movie.
 Once you have a working cash register, add the ability to generate a comma-separated values 
 (CSV) file containing a human-readable summary of all the transactions that your cash register
 has processed since it was initialized.
+
 #### CSV file requirements:
 * Filename should be the current date (ex: 2000-01-31.csv if today is January 31st, 2000)
 * First row should be human-readable column names
