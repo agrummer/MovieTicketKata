@@ -492,7 +492,7 @@ public class CinemaCashRegisterTest {
     }
 
     @Test
-    public void testPrintAllPurchases() {
+    public void testPrintAllPurchases() throws Exception {
         CinemaCashRegister instance = new CinemaCashRegister();
 
         instance.startPurchase("Slumdog Millionaire", 90, Day.WED, false);
@@ -521,10 +521,12 @@ public class CinemaCashRegisterTest {
         instance.addTicket(19, true);
         instance.addTicket(19, true);
         instance.addTicket(21, true);
+        instance.addTicket(19, true);
+        instance.addTicket(20, true);
         instance.finishPurchase();
 
         instance.writeAllPurchasesToCSV();
 
-        // Visually inspect the CSV written to disk
+        // Visually inspect the CSV written to disk for the criteria defined in README.md
     }
 }
