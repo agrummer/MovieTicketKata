@@ -12,6 +12,8 @@ customer, and you'll need to work quickly... the line outside is growing!
 
 **Customer satisfaction is important, so always charge the lowest possible price!**
 
+## Ticket Pricing
+
 | Basic admission rates (regular weekday, 2D movie, &lt;= 120 min, parquet) |            |
 | ------------------------------------------------------------------------- | ---------: |
 | General admission                                                         |     $11.00 |
@@ -23,7 +25,7 @@ customer, and you'll need to work quickly... the line outside is growing!
 | Surcharges                         | Per Ticket |
 | ---------------------------------- | ---------: |
 | 3D movie                           |     +$3.00 |
-| Over-length (more than 120 min.)   |     +$1.50 |
+| Over-length (more than 120 min)    |     +$1.50 |
 | Weekends                           |     +$1.50 |
 | Loge                               |     +$2.00 |
 
@@ -41,6 +43,8 @@ will always be for the same movie.
 * Customers must have at least 20 people physically present to qualify for the group rate 
   (ex: 19 people cannot purchase 20 tickets just to get the cheaper total price)  
 
+---
+
 ### Extra Credit:
 Once you have a working cash register, add the ability to generate a comma-separated values 
 (CSV) file containing a human-readable summary of all the transactions that your cash register
@@ -51,6 +55,7 @@ has processed since it was initialized.
 * First row should be human-readable column names
 * One row for each finalized purchase (no need to list each individual ticket)
 * Last row should be the total sales revenue from all purchases
+
 
 > Adapted from original "movie tickets coding kata" by Marco Dierenfeldt: 
 > http://codingkata.org/katas/unit/movie-tickets
