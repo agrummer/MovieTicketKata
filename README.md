@@ -31,14 +31,23 @@ _*Exceptions are applied for each ticket purchased._
 **Customer satisfaction is important, so always charge the lowest possible price!**
 
 #### Truths You Can Assume:
+* 3D movies will always have "in 3D" at the end of their title
 * Each customer can purchase any number of tickets, but all the tickets for that customer 
 will always be for the same movie.
 * A student can be any age (you're never too old to learn!)
 * There are no age requirements for any of the movies (this is a family-friendly theater!)
 * There are infinite seats available for all movies, so nothing is ever sold out.
-* Customers must have at least 20 people physically present to qualify for the group rate (ex: 19 people cannot purchase 20 tickets just to get the cheaper total price)  
+* Customers must have at least 20 people physically present to qualify for the group rate 
+  (ex: 19 people cannot purchase 20 tickets just to get the cheaper total price)  
 
-
+### Extra Credit:
+Once you have a working cash register, add the ability to generate a comma-separated values 
+(CSV) file containing a human-readable summary of all the transactions that your cash register
+has processed since it was initialized. CSV file requirements:
+* Filename should be the current date (ex: 2000-01-31.csv if today is January 31st, 2000)
+* First row should be human-readable column names
+* One row for each finalized purchase (no need to list each individual ticket)
+* Last row should be the total sales revenue from all purchases
 
 > Adapted from original "movie tickets coding kata" by Marco Dierenfeldt: 
 > http://codingkata.org/katas/unit/movie-tickets

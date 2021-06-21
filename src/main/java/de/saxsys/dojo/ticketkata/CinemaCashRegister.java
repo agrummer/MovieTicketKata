@@ -12,12 +12,12 @@ public class CinemaCashRegister {
      * (1) New customers arrive at your ticket booth and tell you
      * what movie they'd like to see (so keep it in mind ;-)
      *
-     * @param runtime   movie's runtime in minutes
-     * @param day       day of the week (enum)
-     * @param isParquet true if seating category is 'parquet' (and not 'loge')
-     * @param is3D      true if the movie's shown in 3D
+     * @param movieTitle   title of the film
+     * @param movieRuntime movie's runtime in minutes
+     * @param day          day of the week (enum)
+     * @param parquet      true if seating category is 'parquet' (and not 'loge')
      */
-    public void startPurchase(int runtime, Day day, boolean isParquet, boolean is3D) {
+    public void startPurchase(String movieTitle, int movieRuntime, Day day, boolean parquet) {
 
     }
 
@@ -38,6 +38,19 @@ public class CinemaCashRegister {
      */
     public float finishPurchase() {
         return 0.0f;
+    }
+
+    /**
+     * (4 - OPTIONAL) Extra credit:
+     *
+     * Write a CSV file to disk with the current date for a name (ex: 2000-01-31.csv)
+     * The CSV file should include:
+     *   - Human-readable column headers
+     *   - One row for each purchase transaction
+     *   - Total sales revenue as the last row
+     */
+    public void writeAllPurchasesToCSV() {
+
     }
 
 }

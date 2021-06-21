@@ -11,150 +11,143 @@ public class CinemaCashRegisterTest {
 
     @Test
     public void testSingleTicketPurchase() {
-        System.out.println("testSingleTicketPurchase");
         int runtime = 60;
         Day day = Day.MON;
         boolean isParquet = true;
-        boolean is3D = false;
+        String title = "The Last Emperor";
         int age = 30;
         boolean isStudent = false;
 
         float expResult = 11.0F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         instance.addTicket(age, isStudent);
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(title, expResult, result, 0.0);
     }
 
     @Test
     public void testPurchaseNo3DParquetWeekdayNoGroupMidageNoStudent() {
-        System.out.println("testPurchaseNo3DParquetWeekdayNoGroupMidageNoStudent");
         int runtime = 72;
         Day day = Day.TUE;
         boolean isParquet = true;
-        boolean is3D = false;
+        String title = "Rain Man";
         int age = 35;
         boolean isStudent = false;
 
         float expResult = 44.0F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(title, expResult, result, 0.0);
     }
 
     @Test
     public void testPurchase3DParquetWeekdayNoGroupMidageNoStudent() {
-        System.out.println("testPurchase3DParquetWeekdayNoGroupMidageNoStudent");
         int runtime = 72;
         Day day = Day.TUE;
         boolean isParquet = true;
-        boolean is3D = true;
+        String title = "Driving Miss Daisy in 3D";
         int age = 35;
         boolean isStudent = false;
 
         float expResult = 56.0F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(title, expResult, result, 0.0);
     }
 
     @Test
     public void testPurchase3DLogeWeekdayNoGroupMidageNoStudent() {
-        System.out.println("testPurchase3DLogeWeekdayNoGroupMidageNoStudent");
         int runtime = 72;
         Day day = Day.TUE;
         boolean isParquet = false;
-        boolean is3D = true;
+        String title = "Dances with Wolves in 3D";
         int age = 35;
         boolean isStudent = false;
 
         float expResult = 64.0F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
 
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(title, expResult, result, 0.0);
     }
 
     @Test
     public void testPurchase3DLogeMovieDayNoGroupMidageNoStudent() {
-        System.out.println("testPurchase3DLogeMovieDayNoGroupMidageNoStudent");
         int runtime = 72;
         Day day = Day.THU;
         boolean isParquet = false;
-        boolean is3D = true;
+        String title = "The Silence of the Lambs in 3D";
         int age = 35;
         boolean isStudent = false;
 
         float expResult = 56.0F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
 
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(title, expResult, result, 0.0);
     }
 
     @Test
     public void testPurchase3DLogeWeekendNoGroupMidageNoStudent() {
-        System.out.println("testPurchase3DLogeWeekendNoGroupMidageNoStudent");
         int runtime = 72;
         Day day = Day.SAT;
         boolean isParquet = false;
-        boolean is3D = true;
+        String title = "Unforgiven in 3D";
         int age = 35;
         boolean isStudent = false;
 
         float expResult = 70.0F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
 
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(title, expResult, result, 0.0);
     }
 
     @Test
     public void testPurchase3DLogeWeekendNoGroupMidageWithStudent() {
-        System.out.println("testPurchase3DLogeWeekendNoGroupMidageWithStudent");
         int runtime = 90;
         Day day = Day.SUN;
         boolean isParquet = false;
-        boolean is3D = true;
+        String title = "The Fugitive in 3D";
         int age = 23;
         boolean isStudent = false;
 
         float expResult = 84.5F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
@@ -163,47 +156,45 @@ public class CinemaCashRegisterTest {
         instance.addTicket(age, isStudent);
 
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(title, expResult, result, 0.0);
     }
 
     @Test
     public void testPurchaseOverlengthNo3DParquetWeekdayNoGroupMidageNoStudent() {
-        System.out.println("testPurchaseOverlengthNo3DParquetWeekdayNoGroupMidageNoStudent");
         int runtime = 145;
         Day day = Day.TUE;
         boolean isParquet = true;
-        boolean is3D = false;
+        String title = "Forrest Gump";
         int age = 35;
         boolean isStudent = false;
 
         float expResult = 50.0F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
 
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(title, expResult, result, 0.0);
     }
 
 
     @Test
     public void testPurchaseOverlengthNo3DParquetWeekdayNoGroupMidageWithStudents() {
-        System.out.println("testPurchaseOverlengthNo3DParquetWeekdayNoGroupMidageWithStudents");
         int runtime = 145;
         Day day = Day.TUE;
         boolean isParquet = true;
-        boolean is3D = false;
+        String title = "Braveheart";
         int age = 35;
         boolean isStudent = false;
 
         float expResult = 44.0F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         isStudent = true;
@@ -211,24 +202,23 @@ public class CinemaCashRegisterTest {
         instance.addTicket(age, isStudent);
 
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(title, expResult, result, 0.0);
     }
 
 
     @Test
     public void testPurchaseOverlengthNo3DParquetWeekdayNoGroupSeniorNoStudents() {
-        System.out.println("testPurchaseOverlengthNo3DParquetWeekdayNoGroupSeniorNoStudents");
         int runtime = 145;
         Day day = Day.TUE;
         boolean isParquet = true;
-        boolean is3D = false;
+        String title = "The English Patient";
         int age = 35;
         boolean isStudent = false;
 
         float expResult = 45.0F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
@@ -236,23 +226,22 @@ public class CinemaCashRegisterTest {
         instance.addTicket(age, isStudent);
 
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(title, expResult, result, 0.0);
     }
 
     @Test
     public void testPurchaseOverlengthNo3DParquetWeekdayNoGroupSeniorAsStudents() {
-        System.out.println("testPurchaseOverlengthNo3DParquetWeekdayNoGroupSeniorAsStudents");
         int runtime = 145;
         Day day = Day.TUE;
         boolean isParquet = true;
-        boolean is3D = false;
+        String title = "Titanic";
         int age = 35;
         boolean isStudent = false;
 
         float expResult = 45.0F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
@@ -261,23 +250,22 @@ public class CinemaCashRegisterTest {
         instance.addTicket(age, isStudent);
 
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(title, expResult, result, 0.0);
     }
 
     @Test
     public void testPurchaseOverlengthNo3DParquetWeekdayNoGroupChildrenNoStudents() {
-        System.out.println("testPurchaseOverlengthNo3DParquetWeekdayNoGroupChildrenNoStudents");
         int runtime = 145;
         Day day = Day.TUE;
         boolean isParquet = true;
-        boolean is3D = false;
+        String title = "Shakespeare in Love";
         int age = 35;
         boolean isStudent = false;
 
         float expResult = 44.5F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
@@ -285,24 +273,23 @@ public class CinemaCashRegisterTest {
         instance.addTicket(age, isStudent);
 
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(title, expResult, result, 0.0);
     }
 
 
     @Test
     public void testPurchaseOverlengthNo3DParquetWeekdayNoGroupChildrenAsStudents() {
-        System.out.println("testPurchaseOverlengthNo3DParquetWeekdayNoGroupChildrenAsStudents");
         int runtime = 145;
         Day day = Day.TUE;
         boolean isParquet = true;
-        boolean is3D = false;
+        String title = "American Beauty";
         int age = 35;
         boolean isStudent = false;
 
         float expResult = 44.5F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
         instance.addTicket(age, isStudent);
@@ -311,86 +298,82 @@ public class CinemaCashRegisterTest {
         instance.addTicket(age, isStudent);
 
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(title, expResult, result, 0.0);
     }
 
     @Test
     public void testPurchaseNo3DParquetWeekdayGroupMidageNoStudent() {
-        System.out.println("testPurchaseNo3DParquetWeekdayGroupMidageNoStudent");
         int runtime = 72;
         Day day = Day.TUE;
         boolean isParquet = true;
-        boolean is3D = false;
+        String title = "Gladiator";
         int age = 35;
         boolean isStudent = false;
 
         float expResult = 138.0F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         for (int i = 0; i < 23; i++) {
             instance.addTicket(age, isStudent);
         }
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(title, expResult, result, 0.0);
     }
 
     @Test
     public void testPurchase3DParquetWeekdayGroupMidageNoStudent() {
-        System.out.println("testPurchase3DParquetWeekdayGroupMidageNoStudent");
         int runtime = 72;
         Day day = Day.TUE;
         boolean isParquet = true;
-        boolean is3D = true;
+        String title = "A Beautiful Mind in 3D";
         int age = 35;
         boolean isStudent = false;
 
         float expResult = 207.0F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         for (int i = 0; i < 23; i++) {
             instance.addTicket(age, isStudent);
         }
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(title, expResult, result, 0.0);
     }
 
     @Test
     public void testPurchase3DParquetMovieDayGroupMidageNoStudent() {
-        System.out.println("testPurchase3DParquetMovieDayGroupMidageNoStudent");
         int runtime = 72;
         Day day = Day.THU;
         boolean isParquet = true;
-        boolean is3D = true;
+        String title = "Chicago in 3D";
         int age = 35;
         boolean isStudent = false;
 
         float expResult = 207.0F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         for (int i = 0; i < 23; i++) {
             instance.addTicket(age, isStudent);
         }
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(title, expResult, result, 0.0);
     }
 
     @Test
     public void testPurchasebigEnoughSchoolclassWithTwoTeachers() {
-        System.out.println("testPurchasebigEnoughSchoolclassWithTwoTeachers");
         int runtime = 72;
         Day day = Day.WED;
         boolean isParquet = true;
-        boolean is3D = false;
+        String title = "The Lord of the Rings: The Return of the King";
         int age = 12;
         boolean isStudent = false;
 
         float expResult = 144.0F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         for (int i = 0; i < 24; i++) {
             instance.addTicket(age, isStudent);
         }
@@ -399,24 +382,23 @@ public class CinemaCashRegisterTest {
         age = 27;
         instance.addTicket(age, isStudent);
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(title, expResult, result, 0.0);
     }
 
 
     @Test
     public void testPurchaseTooSmallSchoolclassWithTwoTeachers() {
-        System.out.println("testPurchaseTooSmallSchoolclassWithTwoTeachers");
         int runtime = 72;
         Day day = Day.WED;
         boolean isParquet = true;
-        boolean is3D = false;
+        String title = "Million Dollar Baby";
         int age = 12;
         boolean isStudent = false;
 
         float expResult = 111.00F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         for (int i = 0; i < 18; i++) {
             instance.addTicket(age, isStudent);
         }
@@ -425,23 +407,22 @@ public class CinemaCashRegisterTest {
         age = 27;
         instance.addTicket(age, isStudent);
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(title, expResult, result, 0.0);
     }
 
     @Test
     public void testPurchaseMix() {
-        System.out.println("testPurchaseMix");
         int runtime = 125;
         Day day = Day.THU;
         boolean isParquet = false;
-        boolean is3D = true;
+        String title = "Crash in 3D";
         int age = 12;
         boolean isStudent = false;
 
         float expResult = 297.50F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         for (int i = 0; i < 5; i++) {
             instance.addTicket(age, isStudent);
         }
@@ -459,7 +440,7 @@ public class CinemaCashRegisterTest {
             instance.addTicket(age, isStudent);
         }
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(title, expResult, result, 0.0);
     }
 
     /*
@@ -467,29 +448,83 @@ public class CinemaCashRegisterTest {
      */
     @Test
     public void testMultipleTransactionsWitheSameCinemaCashRegister() {
-        System.out.println("testMultipleTransactionsWitheSameCinemaCashRegister");
         int runtime = 90;
         Day day = Day.MON;
         boolean isParquet = true;
-        boolean is3D = true;
+        String title = "The Departed in 3D";
         int age = 35;
         boolean isStudent = false;
 
         float expResult = 70.00F;
 
         CinemaCashRegister instance = new CinemaCashRegister();
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         for (int i = 0; i < 5; i++) {
             instance.addTicket(age, isStudent);
         }
         float result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0f);
+        assertEquals(title, expResult, result, 0.0f);
 
-        instance.startPurchase(runtime, day, isParquet, is3D);
+        instance.startPurchase(title, runtime, day, isParquet);
         for (int i = 0; i < 5; i++) {
             instance.addTicket(age, isStudent);
         }
         result = instance.finishPurchase();
-        assertEquals(expResult, result, 0.0f);
+        assertEquals(title, expResult, result, 0.0f);
+    }
+
+    @Test
+    public void testNon3DMovieWith3DInTitle() {
+        int runtime = 60;
+        Day day = Day.MON;
+        boolean isParquet = true;
+        String title = "No Country in 3D for Old Men";
+        int age = 30;
+        boolean isStudent = false;
+
+        float expResult = 11.0F;
+
+        CinemaCashRegister instance = new CinemaCashRegister();
+        instance.startPurchase(title, runtime, day, isParquet);
+        instance.addTicket(age, isStudent);
+        float result = instance.finishPurchase();
+        assertEquals(title, expResult, result, 0.0);
+    }
+
+    @Test
+    public void testPrintAllPurchases() {
+        CinemaCashRegister instance = new CinemaCashRegister();
+
+        instance.startPurchase("Slumdog Millionaire", 90, Day.WED, false);
+        instance.addTicket(22, false);
+        instance.addTicket(19, true);
+        instance.finishPurchase();
+
+        instance.startPurchase("The Hurt Locker", 120, Day.THU, true);
+        instance.addTicket(36, false);
+        for (int i = 0; i < 22; i++) {
+            instance.addTicket(14, true);
+        }
+        instance.finishPurchase();
+
+        instance.startPurchase("The King's Speech", 160, Day.FRI, false);
+        instance.addTicket(46, false);
+        instance.finishPurchase();
+
+        instance.startPurchase("The Artist", 75, Day.SAT, false);
+        instance.addTicket(34, false);
+        instance.addTicket(30, false);
+        instance.finishPurchase();
+
+        instance.startPurchase("Argo", 85, Day.SAT, false);
+        instance.addTicket(22, false);
+        instance.addTicket(19, true);
+        instance.addTicket(19, true);
+        instance.addTicket(21, true);
+        instance.finishPurchase();
+
+        instance.writeAllPurchasesToCSV();
+
+        // Visually inspect the CSV written to disk
     }
 }
