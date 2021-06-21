@@ -43,7 +43,8 @@ will always be for the same movie.
 ### Extra Credit:
 Once you have a working cash register, add the ability to generate a comma-separated values 
 (CSV) file containing a human-readable summary of all the transactions that your cash register
-has processed since it was initialized. CSV file requirements:
+has processed since it was initialized.
+#### CSV file requirements:
 * Filename should be the current date (ex: 2000-01-31.csv if today is January 31st, 2000)
 * First row should be human-readable column names
 * One row for each finalized purchase (no need to list each individual ticket)
