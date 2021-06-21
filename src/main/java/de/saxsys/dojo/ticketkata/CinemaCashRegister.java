@@ -46,7 +46,7 @@ public class CinemaCashRegister {
     }
 
     /**
-     * (4 - OPTIONAL) Extra credit:
+     * (4) Generate CSV
      *
      * Write a CSV file to disk with the current date for a name (ex: 2000-01-31.csv)
      * The CSV file should include:
